@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+    <title>Title</title>
+</head>
+
+<style>
+    body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+    .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+    .fa-anchor,.fa-coffee {font-size:200px}
+
+    #header{
+        background-image: url("img/banner.jpg");
+        background-size: cover;
+        background-color: #4b4d4e;
+    }
+
+    .data {
+        margin: 10px;
+    }
+</style>
+
+<body>
+
+
+<div class="w3-top">
+    <div class="w3-bar w3-dark-grey w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+        <a href="#1" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Forcast</a>
+        <a href="#2" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Comments</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    </div>
+</div>
+
+<!-- Header -->
+<header id="header" class="w3-container w3-red w3-center" style="padding:128px 16px">
+    <h1 class="w3-margin w3-jumbo">Surf Forcast</h1>
+    <p class="w3-xlarge">Search for location</p>
+    <div class="search">
+
+        <input id="search" type="text"> <br>
+        <button id="searchButton" class="w3-button w3-black w3-padding-large w3-large w3-margin-top" type="button">Search</button>
+
+
+    </div>
+
+</header>
+
+<!-- First Grid -->
+<div id="1" class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content" style="max-width: 1500px">
+        <div class="w3-half">
+
+            <h1>Weather</h1>
+
+            <h2>Surf details for <span id="locationWeather"></span></h2>
+            <div class="w3-half">
+                <h2>Today</h2>
+                <h3>12am</h3>
+                Wave Height: <span id="waveHeightDay0_0"></span><br>
+                Swell Height: <span id="swellHeightDay0_0"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_0"></span><br>
+
+                <h3>3am</h3>
+                Wave Height: <span id="waveHeightDay0_3"></span><br>
+                Swell Height: <span id="swellHeightDay0_3"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_3"></span><br>
+
+                <h3>6am</h3>
+                Wave Height: <span id="waveHeightDay0_6"></span><br>
+                Swell Height: <span id="swellHeightDay0_6"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_6"></span><br>
+
+                <h3>9am</h3>
+                Wave Height: <span id="waveHeightDay0_9"></span><br>
+                Swell Height: <span id="swellHeightDay0_9"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_9"></span><br>
+
+                <h3>12pm</h3>
+                Wave Height: <span id="waveHeightDay0_12"></span><br>
+                Swell Height: <span id="swellHeightDay0_12"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_12"></span><br>
+
+                <h3>3pm</h3>
+                Wave Height: <span id="waveHeightDay0_15"></span><br>
+                Swell Height: <span id="swellHeightDay0_15"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_15"></span><br>
+
+                <h3>6pm</h3>
+                Wave Height: <span id="waveHeightDay0_18"></span><br>
+                Swell Height: <span id="swellHeightDay0_18"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_18"></span><br>
+
+                <h3>9pm</h3>
+                Wave Height: <span id="waveHeightDay0_21"></span><br>
+                Swell Height: <span id="swellHeightDay0_21"></span><br>
+                Swell Direction: <span id="swellDirectionDay0_21"></span><br>
+            </div>
+            <div class="w3-half">
+                <h2>Tomorrow</h2>
+                <h3>12am</h3>
+                Wave Height: <span id="waveHeightDay1_0"></span><br>
+                Swell Height: <span id="swellHeightDay1_0"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_0"></span><br>
+
+                <h3>3am</h3>
+                Wave Height: <span id="waveHeightDay1_3"></span><br>
+                Swell Height: <span id="swellHeightDay1_3"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_3"></span><br>
+
+                <h3>6am</h3>
+                Wave Height: <span id="waveHeightDay1_6"></span><br>
+                Swell Height: <span id="swellHeightDay1_6"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_6"></span><br>
+
+                <h3>9am</h3>
+                Wave Height: <span id="waveHeightDay1_9"></span><br>
+                Swell Height: <span id="swellHeightDay1_9"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_9"></span><br>
+
+                <h3>12pm</h3>
+                Wave Height: <span id="waveHeightDay1_12"></span><br>
+                Swell Height: <span id="swellHeightDay1_12"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_12"></span><br>
+
+                <h3>3pm</h3>
+                Wave Height: <span id="waveHeightDay1_15"></span><br>
+                Swell Height: <span id="swellHeightDay1_15"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_15"></span><br>
+
+                <h3>6pm</h3>
+                Wave Height: <span id="waveHeightDay1_18"></span><br>
+                Swell Height: <span id="swellHeightDay1_18"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_18"></span><br>
+
+                <h3>9pm</h3>
+                Wave Height: <span id="waveHeightDay1_21"></span><br>
+                Swell Height: <span id="swellHeightDay1_21"></span><br>
+                Swell Direction: <span id="swellDirectionDay1_21"></span><br>
+            </div>
+
+
+        </div>
+        <div class="w3-half">
+            <h1>Location</h1>
+            <br>
+        <div class="w3-center">
+            <div id="mapid" style="width: 100%; height: 400px;"></div>
+
+            <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+        </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<!-- Second Grid -->
+<div id="2" class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+
+        <div class="w3-twothird">
+            <h1>Comments</h1>
+            <div id="dataInsert">
+            </div>
+        </div>
+
+        <div class="w3-third">
+        <h1>Add Comment</h1>
+
+        <p>
+
+            <input class="input" id="name" placeholder="Name" type="text">
+            <input class="input" id="text" placeholder="Comment" type="text"><br>
+            <button  onclick="validate()" id="submit" type="button">Submit</button>
+
+        </p>
+        </div>
+    </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+    <div class="w3-xlarge w3-padding-32">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+
+<script>
+
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+    function validate() {
+        const x = document.getElementById("name").value;
+        if(x ==""){
+            alert("All fields must be filled out");
+            return false;
+        }
+        getData();
+    }
+
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+
+
+    const searchButton = document.getElementById('searchButton');
+    searchButton.addEventListener('click', async  event => {
+        searchParam = document.getElementById('search').value;
+        const searchAPI = `location/${searchParam}`;
+
+        const searchResponse = await fetch(searchAPI);
+        const json2 = await  searchResponse.json();
+
+        console.log(json2);
+
+
+
+
+
+        placeName = json2[0].display_name;
+        longitude = json2[0].lon;
+        latitude = json2[0].lat;
+
+        mymap.panTo(new L.LatLng(latitude, longitude));
+
+
+
+        document.getElementById('locationWeather').textContent = placeName;
+
+        const api_url = `weather/${lat},${lon}`;
+        const responsse = await fetch(api_url);
+        const json = await responsse.json();
+
+        console.log(json);
+
+        day0_12am = json.data.weather[0].hourly[0];
+        day0_3am = json.data.weather[0].hourly[1];
+        day0_6am = json.data.weather[0].hourly[2];
+        day0_9am = json.data.weather[0].hourly[3];
+        day0_12pm = json.data.weather[0].hourly[4];
+        day0_3pm = json.data.weather[0].hourly[5];
+        day0_6pm = json.data.weather[0].hourly[6];
+        day0_9pm = json.data.weather[0].hourly[7];
+
+        day1_12am = json.data.weather[1].hourly[0];
+        day1_3am = json.data.weather[1].hourly[1];
+        day1_6am = json.data.weather[1].hourly[2];
+        day1_9am = json.data.weather[1].hourly[3];
+        day1_12pm = json.data.weather[1].hourly[4];
+        day1_3pm = json.data.weather[1].hourly[5];
+        day1_6pm = json.data.weather[1].hourly[6];
+        day1_9pm = json.data.weather[1].hourly[7];
+
+        //Day 0
+        document.getElementById('waveHeightDay0_0').textContent = day0_12am.sigHeight_m;
+        document.getElementById('swellHeightDay0_0').textContent = day0_12am.swellHeight_m;
+        document.getElementById('swellDirectionDay0_0').textContent = day0_12am.swellDir16Point;
+
+        document.getElementById('waveHeightDay0_3').textContent = day0_3am.sigHeight_m;
+        document.getElementById('swellHeightDay0_3').textContent = day0_3am.swellHeight_m;
+        document.getElementById('swellDirectionDay0_3').textContent = day0_3am.swellDir16Point;
+
+        document.getElementById('waveHeightDay0_6').textContent = day0_6am.sigHeight_m;
+        document.getElementById('swellHeightDay0_6').textContent = day0_6am.swellHeight_m;
+        document.getElementById('swellDirectionDay0_6').textContent = day0_6am.swellDir16Point;
+
+        document.getElementById('waveHeightDay0_9').textContent = day0_9am.sigHeight_m;
+        document.getElementById('swellHeightDay0_9').textContent = day0_9am.swellHeight_m;
+        document.getElementById('swellDirectionDay0_9').textContent = day0_9am.swellDir16Point;
+
+        document.getElementById('waveHeightDay0_12').textContent = day0_12pm.sigHeight_m;
+        document.getElementById('swellHeightDay0_12').textContent = day0_12pm.swellHeight_m;
+        document.getElementById('swellDirectionDay0_12').textContent = day0_12pm.swellDir16Point;
+
+        document.getElementById('waveHeightDay0_15').textContent = day0_3pm.sigHeight_m;
+        document.getElementById('swellHeightDay0_15').textContent = day0_3pm.swellHeight_m;
+        document.getElementById('swellDirectionDay0_15').textContent = day0_3pm.swellDir16Point;
+
+        document.getElementById('waveHeightDay0_18').textContent = day0_6pm.sigHeight_m;
+        document.getElementById('swellHeightDay0_18').textContent = day0_6pm.swellHeight_m;
+        document.getElementById('swellDirectionDay0_18').textContent = day0_6pm.swellDir16Point;
+
+        document.getElementById('waveHeightDay0_21').textContent = day0_9pm.sigHeight_m;
+        document.getElementById('swellHeightDay0_21').textContent = day0_9pm.swellHeight_m;
+        document.getElementById('swellDirectionDay0_21').textContent = day0_9pm.swellDir16Point;
+
+        //Day 1
+        document.getElementById('waveHeightDay1_0').textContent = day1_12am.sigHeight_m;
+        document.getElementById('swellHeightDay1_0').textContent = day1_12am.swellHeight_m;
+        document.getElementById('swellDirectionDay1_0').textContent = day1_12am.swellDir16Point;
+
+        document.getElementById('waveHeightDay1_3').textContent = day1_3am.sigHeight_m;
+        document.getElementById('swellHeightDay1_3').textContent = day1_3am.swellHeight_m;
+        document.getElementById('swellDirectionDay1_3').textContent = day1_3am.swellDir16Point;
+
+        document.getElementById('waveHeightDay1_6').textContent = day1_6am.sigHeight_m;
+        document.getElementById('swellHeightDay1_6').textContent = day1_6am.swellHeight_m;
+        document.getElementById('swellDirectionDay1_6').textContent = day1_6am.swellDir16Point;
+
+        document.getElementById('waveHeightDay1_9').textContent = day1_9am.sigHeight_m;
+        document.getElementById('swellHeightDay1_9').textContent = day1_9am.swellHeight_m;
+        document.getElementById('swellDirectionDay1_9').textContent = day1_9am.swellDir16Point;
+
+        document.getElementById('waveHeightDay1_12').textContent = day1_12pm.sigHeight_m;
+        document.getElementById('swellHeightDay1_12').textContent = day1_12pm.swellHeight_m;
+        document.getElementById('swellDirectionDay1_12').textContent = day1_12pm.swellDir16Point;
+
+        document.getElementById('waveHeightDay1_15').textContent = day1_3pm.sigHeight_m;
+        document.getElementById('swellHeightDay1_15').textContent = day1_3pm.swellHeight_m;
+        document.getElementById('swellDirectionDay1_15').textContent = day1_3pm.swellDir16Point;
+
+        document.getElementById('waveHeightDay1_18').textContent = day1_6pm.sigHeight_m;
+        document.getElementById('swellHeightDay1_18').textContent = day1_6pm.swellHeight_m;
+        document.getElementById('swellDirectionDay1_18').textContent = day1_6pm.swellDir16Point;
+
+        document.getElementById('waveHeightDay1_21').textContent = day1_9pm.sigHeight_m;
+        document.getElementById('swellHeightDay1_21').textContent = day1_9pm.swellHeight_m;
+        document.getElementById('swellDirectionDay1_21').textContent = day1_9pm.swellDir16Point;
+
+        getData();
+
+
+        }
+    )
+
+
+
+
+    let lon, lat;
+
+    const button = document.getElementById('submit');
+    button.addEventListener('click', async  event => {
+        text = document.getElementById('text').value;
+        name = document.getElementById('name').value;
+        const data = {lon, lat, text, name}
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        };
+        const response = await fetch('/api', options);
+        const json = await response.json();
+
+        getData();
+
+
+
+           /* const api_url = `weather/${lat},${lon}`;
+            const responsse = await fetch(api_url);
+            const json = await responsse.json();
+
+            console.log(json);*/
+
+    })
+
+    if('geolocation' in navigator) {
+        console.log('Geolocation Available');
+        navigator.geolocation.getCurrentPosition(async (position) => {
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            document.getElementById('latitude').textContent = lat;
+            document.getElementById('longitude').textContent = lon;
+            // const api_url = `weather/${lat},${lon}`;
+            // const response = await fetch(api_url);
+            // const json = await response.json();
+            console.log(json);
+
+
+    });
+    } else {
+        console.log('Geolocation Not Available');
+        /* geolocation IS NOT available */
+
+
+    }
+
+    async function getData(){
+
+
+        const response = await fetch('/database');
+        const data = await response.json();
+        console.log(data);
+
+
+
+        document.getElementById('dataInsert').innerHTML = "";
+        for (item of data){
+
+            const div = document.getElementById('dataInsert')
+            const root = document.createElement('div');
+            const date = document.createElement('div');
+            const text = document.createElement('div');
+            const name = document.createElement('div');
+
+
+
+            root.className="data";
+
+            const dateString = new Date(item.timestamp).toLocaleString();
+            name.textContent = `Name: ${item.name}`;
+            date.textContent = dateString;
+            text.textContent = `Text: ${item.text}`;
+
+            root.append(date, name, text);
+            div.appendChild(root);
+
+
+        }
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>

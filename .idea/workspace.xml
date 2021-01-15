@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad7690e8-5ec0-4a12-afdf-c37b47f4fa9e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="tsconfig.json" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/dissused" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/redis/index.js" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1m14v8w45dnkSCHtovsqNQiEM3i" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\OneDrive\OneDrive - University of Plymouth\Year 3\NET 302\Project" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="RedisServer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node_modules/redis-server/RedisServer.js" working-dir="$PROJECT_DIR$/node_modules/redis-server">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.RedisServer.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad7690e8-5ec0-4a12-afdf-c37b47f4fa9e" name="Default Changelist" comment="" />
+      <created>1608647990194</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608647990194</updated>
+      <workItem from="1608647991997" duration="10607000" />
+      <workItem from="1608742479169" duration="4390000" />
+      <workItem from="1609257687983" duration="4640000" />
+      <workItem from="1609334898288" duration="13065000" />
+      <workItem from="1609517579959" duration="5892000" />
+      <workItem from="1609944215686" duration="10363000" />
+      <workItem from="1610029396572" duration="16023000" />
+      <workItem from="1610116105269" duration="10892000" />
+      <workItem from="1610138681328" duration="4116000" />
+      <workItem from="1610201420332" duration="6297000" />
+      <workItem from="1610287000509" duration="15211000" />
+      <workItem from="1610377031286" duration="4520000" />
+      <workItem from="1610551931391" duration="2632000" />
+      <workItem from="1610656132192" duration="9872000" />
+      <workItem from="1610713190490" duration="2910000" />
+      <workItem from="1610721659684" duration="116000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LIMIT_HISTORY" value="false" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/App" />
+      <path value="$PROJECT_DIR$/dissused" />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
+</project>
